@@ -93,7 +93,6 @@ public class MainActivity3 extends AppCompatActivity  implements DetailsAdapter.
 
     @Override
     public void onItemClick2(int position, String id) {
-
         btnEvent("details","Note details","CardView");
     }
     public  void btnEvent(String id,String name,String content){
