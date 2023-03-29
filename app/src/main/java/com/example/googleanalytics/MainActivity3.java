@@ -62,9 +62,10 @@ public class MainActivity3 extends AppCompatActivity  implements DetailsAdapter.
                                     String id = documentSnapshot.getId();
                                     String details = documentSnapshot.getString("details");
                                     String date = documentSnapshot.getString("date");
+                                    String image = documentSnapshot.getString("image");
 
 
-                                    Details details1 = new Details(details,id, date );
+                                    Details details1 = new Details(details,id, date ,image);
                                     items.add(details1);
 
                                     rv.setLayoutManager(layoutManager);

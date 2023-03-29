@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.googleanalytics.Models.Categories;
 import com.example.googleanalytics.Models.Details;
 import com.example.googleanalytics.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -40,6 +41,7 @@ public class DetailsAdapter extends RecyclerView.Adapter<DetailsAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull DetailsAdapter.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
      holder.details.setText(mData.get(position).getTitle());
+     Picasso.with(mInflater.getContext()).load(mData.get(position).getImage()).into(holder.image);
         holder.date.setText(mData.get(position).getDate());
         holder.card.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,13 +62,13 @@ public class DetailsAdapter extends RecyclerView.Adapter<DetailsAdapter.ViewHold
         public TextView details;
         public CardView card;
         public TextView date;
-
+        public ImageView image;
         ViewHolder(View itemView) {
             super(itemView);
             this.details = itemView.findViewById(R.id.details);
             this.card = itemView.findViewById(R.id.card2);
             this.date=itemView.findViewById(R.id.date1);
-
+            this.image=itemView.findViewById(R.id.image);
             itemView.setOnClickListener(this);
         }
 
